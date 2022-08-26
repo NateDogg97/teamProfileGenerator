@@ -2,7 +2,7 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const pageTemplate = require('./src/page-template');
+const createTeam = require('./src/page-template');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -58,7 +58,7 @@ function init() {
             message: "What is the manager's Office number?",
             // Validating the answer to make sure the user input makes sense //
             validate: (answer) => {
-                const fail = answers.match(/[^0-9]/);
+                const fail = answer.match(/[^0-9]/);
                 if(answer !== '' && !fail){
                     return true
                 }
@@ -87,7 +87,7 @@ function init() {
     console.log('Perfect! Now its time to build the team.');
       inquirer.prompt([
         {
-            type: 'choice',
+            type: 'list',
             name: 'newEmp',
             message: 'Would you like to add any team members?',
             choices: ['Engineer', 'Intern', 'No thank you']
@@ -95,7 +95,7 @@ function init() {
       ])
       // We use a switch function to direct inquirer to the next series of prompts //
       .then((answers) => {
-        switch (answers) {
+        switch (answers.newEmp) {
             case 'Engineer':
                 addEngineer();
                 break;
@@ -253,7 +253,7 @@ function init() {
     }
 
     function buildHtml() {
-        fs.writeFile('./dist/team.html', pageTemplate(employeeArray), 'utf-8', (err) => {
+        fs.writeFileSync('./dist/team.html', createTeam(employeeArray), 'utf-8', (err) => {
             (err) ? console.error(err) : console.log('Success!');
         });
     }

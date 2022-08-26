@@ -1,8 +1,7 @@
 const createTeam = employee => {
 
-    const htmlHead = () => {
-        return `
-        <!DOCTYPE html>
+    const htmlHead = function(){
+    return `<!DOCTYPE html>
         <html lang="en">
         
         <head>
@@ -76,7 +75,7 @@ const createTeam = employee => {
 
     const html = [];
 
-    html.push(htmlHead);
+    html.push(htmlHead());
     html.push(employee
         .filter(employee => employee.getRole() === "Manager")
         .map(employee => writeManagerHtml(employee)));
@@ -85,9 +84,9 @@ const createTeam = employee => {
         .map(employee => writeEngineerHtml(employee)));
     html.push(employee
         .filter(employee => employee.getRole() === "Intern")
-        .filter(employee => writeInternHtml(employee)));
+        .map(employee => writeInternHtml(employee)));
 
     return html.join('')
 }
 
-module.exports = createTeam(employee);
+module.exports = employee => createTeam(employee);
