@@ -2,8 +2,8 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const pageTemplate = require('./src/page-template');
 const inquirer = require('inquirer');
-const path = require('path');
 const fs = require('fs');
 
 const employeeArray = [];
@@ -253,7 +253,9 @@ function init() {
     }
 
     function buildHtml() {
-        
+        fs.writeFile('./dist/team.html', pageTemplate(employeeArray), 'utf-8', (err) => {
+            (err) ? console.error(err) : console.log('Success!');
+        });
     }
     
 
