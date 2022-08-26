@@ -2,7 +2,7 @@ const Employee = require('../lib/Employee');
 
 
     test("Should be an object", () => {
-        const obj = new Employee;
+        const obj = new Employee();
 
         expect(typeof(obj)).toEqual("object");
     });
@@ -19,7 +19,7 @@ const Employee = require('../lib/Employee');
         const id = 12;
         const obj = new Employee(name, id);
 
-        expect(obj.id).toEqual('12');
+        expect(obj.id).toEqual(12);
     });
 
     test("The third parameter should be the employee's email", () => {
@@ -43,7 +43,7 @@ const Employee = require('../lib/Employee');
         const id = 12;
         const obj = new Employee(name, id);
 
-        expect(obj.getId()).toEqual("12");
+        expect(obj.getId()).toEqual(12);
     });
 
     test("The getEmail method should return the employee's email", () => {
@@ -56,7 +56,7 @@ const Employee = require('../lib/Employee');
     });
 
     test("The getRole method should return 'Employee'", () => {
-        const obj = new Employee;
+        const obj = new Employee();
 
         expect(obj.getRole()).toEqual("Employee");
     });

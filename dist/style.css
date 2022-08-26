@@ -1,0 +1,12 @@
+.header, .card-header {
+    background-color: #a371ff;
+}
+
+.card-body {
+    padding: 0%;
+}
+
+.card {
+    border-color:#a371ff;
+    border-width: 2px;
+}
