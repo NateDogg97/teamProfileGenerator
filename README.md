@@ -15,4 +15,4 @@ To generate a team profile page, simply run 'npm install' to install inquirer an
 
 View the denstration video here:
 
-(https://drive.google.com/file/d/1pLXcGsNUcxPA5LF3pn08ymIkvgFQu0C2/view)
+https://drive.google.com/file/d/1pLXcGsNUcxPA5LF3pn08ymIkvgFQu0C2/view
