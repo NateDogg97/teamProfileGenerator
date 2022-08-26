@@ -19,11 +19,11 @@ function init() {
             message: "What is the manager's name?",
             // Validating the answer to make sure the user input makes sense //
             validate: (answer) => {
-                const fail = answer.match(/[^a-zA-Z]/);
-                if(answer !== '' && !fail){
+                const pass = answer.match(/[a-zA-Z][^0-9]/);
+                if(answer !== '' && pass){
                     return true
                 }
-                return "Please enter the manager's name."
+                return "Do not use numbers when entering a name."
             }
         },
         {
@@ -121,11 +121,11 @@ function init() {
               name: 'engineer',
               message: "What is the engineer's name?",
               validate: (answer) => {
-                const fail = answer.match(/[^a-zA-Z]/);
-                if(answer !== '' && !fail){
+                const pass = answer.match(/[a-zA-Z][^0-9]/);
+                if(answer !== '' && pass){
                     return true
                 }
-                return "Please enter the engineer's name."
+                return "Do not use numbers when entering a name."
               }
           },
           {
@@ -193,11 +193,11 @@ function init() {
             name: 'intern',
             message: "What is the intern's name?",
             validate: (answer) => {
-              const fail = answer.match(/[^a-zA-Z]/);
-              if(answer !== '' && !fail){
+                const pass = answer.match(/[a-zA-Z][^0-9]/);
+              if(answer !== '' && pass){
                   return true
               }
-              return "Please enter the intern's name."
+              return "Do not use numbers when entering a name."
             }           
           },
           {

@@ -86,7 +86,7 @@ const createTeam = employee => {
         .filter(employee => employee.getRole() === "Intern")
         .map(employee => writeInternHtml(employee)));
 
-    return html.join('')
+    return html.join("")
 }
 
 module.exports = employee => createTeam(employee);
