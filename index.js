@@ -11,7 +11,7 @@ const employeeArray = [];
 function init() {
     // To start, the user needs to create a manager with the following prompt //
     function createManager() {
-    console.log('Welcome to Team Builder App! Begin by assigning you manager..');
+    console.log('Welcome to Team Builder App! Begin by assigning your manager..');
       inquirer.prompt([
         {
             type: 'input',
@@ -106,7 +106,6 @@ function init() {
         
             default:
                 console.log('Great! Looks like your team has been created.');
-                console.log(`Here are your team members: ${employeeArray}`);
                 buildHtml();
                 break;
         }
